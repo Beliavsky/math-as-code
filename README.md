@@ -1,6 +1,5 @@
 # math-as-code
 
->[Chinese translation (中文版)](./README-zh.md)  
 >[Python version (English)](./PYTHON-README.md)
 
 This is a reference to ease developers into mathematical notation by showing comparisons with JavaScript code.
@@ -74,21 +73,24 @@ There are a number of symbols resembling the equals sign `=`. Here are a few com
 - `≈` is for approximately equal to (`π ≈ 3.14159`)
 - `:=` is for definition (A is defined as B)
 
-In JavaScript:
+In Fortran:
 
 ```js
 // equality
-2 === 3
+2 == 3
 
 // inequality
-2 !== 3
+2 != 3
 
 // approximately equal
-almostEqual(Math.PI, 3.14159, 1e-5)
+! almostEqual(Math.PI, 3.14159, 1e-5)
 
-function almostEqual(a, b, epsilon) {
-  return Math.abs(a - b) <= epsilon
-}
+```
+function almost_equal(a,b,epsilon) result(tf)
+real, intent(in) :: a,b,epsilon
+logical          :: tf
+tf = abs(a-b) <= epsilon
+end function almost_equal
 ```
 
 You might see the `:=`, `=:` and `=` symbols being used for *definition*.<sup>[1]</sup>
